@@ -10,7 +10,7 @@ def Arquivo(arquivo):
   #Retrona a lista para serguirmos
 	return automato
 
-def vals(automato):
+def dados(automato):
 	automa = {}
 	chave = ''
 	for li in automato:
@@ -99,10 +99,10 @@ def Validado(alfabeto, estados, EstadoFinal, regras):
 	return True
 
 
-automato = Arquivo("a.txt")
-
+automato = Arquivo(input("Arquivo: "))
+palavra = input("Palavra: ")
 #Pega dos dados da primeira linha da lista
-dados = vals(automato)
+dados = dados(automato)
 #Busca estado inicial
 EstadoInicio = dados['initial']
 #Le as regras para transicao
@@ -111,7 +111,6 @@ regras = dados['transitions']
 alfabeto = dados['alphabet']
 estados = dados['states']
 EstadoFinal = dados['accepting']
-palavra = input("Palavra: ")
 #Printa as informações
 print("\nAlfabeto: {}".format(alfabeto))
 print("Estados: {}".format(estados))
